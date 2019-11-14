@@ -57,25 +57,25 @@ def DoTest():
       break
     time.sleep(1.0)
 
-  ##if fail: return fail   
+  if fail: return fail   
   prgreen("SUCCESS: Program")
 
   ## Program
-  fail = True
-  for i in range(0,tries):
-    print "INFO: Final configure",i
-    s = subprocess.check_output(["sudo","./jam","-aconfigure","hl2sof.jam"])
-    print s
-    s = s.strip()
-    s = s[-len(g3):]
-    if s == g3:
-      fail = False
-      break
-    time.sleep(1.0)
+  ##fail = True
+  ##for i in range(0,tries):
+  ##  print "INFO: Final configure",i
+  ##  s = subprocess.check_output(["sudo","./jam","-aconfigure","hl2sof.jam"])
+  ##  print s
+  ##  s = s.strip()
+  ##  s = s[-len(g3):]
+  ##  if s == g3:
+  ##    fail = False
+  ##    break
+  ##  time.sleep(1.0)
     
-  if fail: return fail
-  prgreen("SUCCESS: Final configure")
-  return fail
+  ##if fail: return fail
+  ##prgreen("SUCCESS: Final configure")
+  ##return fail
 
 if DoTest():
   prred("#########################################")
